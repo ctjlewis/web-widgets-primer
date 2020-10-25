@@ -30,8 +30,8 @@
       * [Frozen layouts are "ready to paint"](#frozen-layouts-are-ready-to-paint)
       * [Real-world examples](#real-world-examples)
 * [Footnotes](#footnotes)
-   * [`Widget.from` does not yet hydrate children](#widgetfrom-does-not-yet-hydrate-children)
-   * [`Widget.from` does not yet hydrate class styles from global stylesheet](#widgetfrom-does-not-yet-hydrate-class-styles-from-global-stylesheet)
+   * [`Widget.from()` does not yet hydrate children](#widgetfrom-does-not-yet-hydrate-children)
+   * [`Widget.from()` does not yet hydrate class styles from global stylesheet](#widgetfrom-does-not-yet-hydrate-class-styles-from-global-stylesheet)
    * [Redundant CSS output in namespace freezes](#redundant-css-output-in-namespace-freezes)
 
 ## Demo
@@ -531,11 +531,11 @@ I do. The React homepage can be rendered on a client device without losing a dro
 
 ## Footnotes
 
-### `Widget.from` does not yet hydrate children
+### `Widget.from()` does not yet hydrate children
 
 Todo.
 
-### `Widget.from` does not yet hydrate class styles from global stylesheet
+### `Widget.from()` does not yet hydrate class styles from global stylesheet
 
 Todo.
 
