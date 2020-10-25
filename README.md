@@ -8,12 +8,10 @@
 * [The Widget Pattern](#the-widget-pattern)
    * [Inheriting constructor metadata as instance defaults](#inheriting-constructor-metadata-as-instance-defaults)
    * [Programming widget trees](#programming-widget-trees)
-   * [build(), render(), and setState() methods](#build-render-and-setstate-methods)
+   * [`build()`, `render()`, and `setState()` methods](#build-render-and-setstate-methods)
    * [Lifecycle](#lifecycle)
       * [Rendering process](#rendering-process)
-            * [Diagram source](#diagram-source)
-      * [Freeze/thaw with Widget.from() and Widget.freeze()](#freezethaw-with-widgetfrom-and-widgetfreeze)
-            * [Diagram source](#diagram-source-1)
+      * [Freeze/thaw with `Widget.from()` and `Widget.freeze()`](#freezethaw-with-widgetfrom-and-widgetfreeze)
 * [Why use Web Widgets?](#why-use-web-widgets)
    * [Declarative components](#declarative-components)
    * [Automatic CSS](#automatic-css)
@@ -24,7 +22,7 @@
    * [How does it work?](#how-does-it-work)
       * [Self-replicating layouts](#self-replicating-layouts)
          * [Embedding state logic](#embedding-state-logic)
-         * [Embedding <em>compiled</em> state logic](#embedding-compiled-state-logic)
+         * [Embedding compiled state logic](#embedding-compiled-state-logic)
          * [Frozen vs development layouts](#frozen-vs-development-layouts)
    * [Is this like "server-side rendering" in React?](#is-this-like-server-side-rendering-in-react)
       * [React SSR bundles are less data-efficient](#react-ssr-bundles-are-less-data-efficient)
@@ -32,8 +30,8 @@
       * [Frozen layouts are "ready to paint"](#frozen-layouts-are-ready-to-paint)
       * [Real-world examples](#real-world-examples)
 * [Footnotes](#footnotes)
-   * [Widget.from does not yet hydrate children](#widgetfrom-does-not-yet-hydrate-children)
-   * [Widget.from does not yet hydrate class styles from global stylesheet](#widgetfrom-does-not-yet-hydrate-class-styles-from-global-stylesheet)
+   * [`Widget.from` does not yet hydrate children](#widgetfrom-does-not-yet-hydrate-children)
+   * [`Widget.from` does not yet hydrate class styles from global stylesheet](#widgetfrom-does-not-yet-hydrate-class-styles-from-global-stylesheet)
    * [Redundant CSS output in namespace freezes](#redundant-css-output-in-namespace-freezes)
 
 ## Demo
@@ -321,7 +319,7 @@ embedStateLogicIfFrozen() {
 }
 ```
 
-##### Embedding *compiled* state logic
+##### Embedding compiled state logic
 
 How do we embed calls like `WidgetClassName.from(...).render()` when we run it through the compiler, given that it would need to look like `a.f(...).g()` if we wanted to embed it in the page and have it work without issues? How do we know what Closure Compiler has renamed our variables to, from *inside* the script?
 
