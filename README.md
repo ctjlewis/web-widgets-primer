@@ -359,7 +359,7 @@ export const dereference = (objectRef, propRef) => {
 };
 ```
 
-Here is the output for `new CenterText().freeze()` from the test layout, run in a regular JS console (prettified):
+Here is the output for `new CounterView().freeze()` from the demo layout, run in a regular JS console (prettified):
 
 ```html
 <center class="Center Flex Widget">
