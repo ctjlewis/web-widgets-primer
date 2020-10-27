@@ -164,7 +164,7 @@ class CounterView extends StatefulWidget {
 
 ###### Diagram source
 
-```mermaid
+```pseudocode
 graph LR;
     %% constructor calls initState, which calls build
     construct-- Stateful -->initState;
@@ -188,7 +188,7 @@ graph LR;
 
 ###### Diagram source
 
-```mermaid
+```pseudocode
 graph LR;
     %% Widget to HTML with Widget.freeze
     Widget--Widget.freeze-->HTML;
@@ -359,17 +359,41 @@ export const dereference = (objectRef, propRef) => {
 };
 ```
 
-Here is the output for `new ScrollIndicator().freeze()` run in a regular JS console:
+Here is the output for `new CenterText().freeze()` from the test layout, run in a regular JS console (prettified):
 
 ```html
-<scrollindicator class="ScrollIndicator StatefulWidget Widget"><script async="true">(function(){var el=document.currentScript.parentNode;requestAnimationFrame(function(){ScrollIndicator.from(el).render();});})();</script></scrollindicator>
+<center class="Center Flex Widget">
+    <extralargetext class="ExtraLargeText Widget">0</extralargetext>
+    <button class="SimpleButton Button Widget">PRESS ME</button>
+    <script async="true">
+        (function () {
+            var el = document.currentScript.parentNode;
+            requestAnimationFrame(function () {
+                CounterView.from(el).render();
+            }); 
+        })();
+    </script>
+</center>
 ```
 
  And the same statement, from a compiled script:
 
 ```html
-<w class=""><script async="true">(function(){var el=document.currentScript.parentNode;requestAnimationFrame(function(){.b(el).j();});})();</script></w>
+<w class="E D w">
+    <w class="X w">0</w>
+    <button class="Y S w">PRESS ME</button>
+    <script async="true">
+        (function () {
+            var el = document.currentScript.parentNode;
+            requestAnimationFrame(function () {
+                Z.a(el).h();
+            });
+        })();
+    </script>
+</w>
 ```
+
+The embedded state logic cleans itself up, and 
 
 ##### Frozen vs development layouts
 
