@@ -36,7 +36,7 @@
 
 ## Demo
 
-https://storage.googleapis.com/web-widgets-demo/test
+https://telework.sh/widget.freeze
 
 ### Lighthouse results
 
