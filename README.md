@@ -36,7 +36,9 @@
 
 ## Demo
 
-https://telework.sh/widget.freeze
+Frozen (production): https://web-widgets.netlify.app/widget.freeze
+
+CSR (dev mode): https://web-widgets.netlify.app/widget.render.dev
 
 ### Lighthouse results
 
@@ -499,7 +501,7 @@ There is much room for optimization, as the library is still at a proof-of-conce
 
 ### Is this like "server-side rendering" in React?
 
-This is process is *roughly* analogous to React's "server-side rendering", except React tends to generate a whole runtime which will add half a megabyte (or more) to your output as a `script` tag, which will end up mutating the DOM and performing the initial page render dynamically via DOM mutations, the loading of expensive stylesheets and third party scripts, etc. This is commonly excused as "no big deal", but it does compound rather quickly.
+This is process is *roughly* analogous to React's "server-side rendering", except React tends to generate a whole runtime which can add half a megabyte (or more) to your output as a `script` tag, which will end up mutating the DOM and performing the initial page render dynamically via DOM mutations, the loading of expensive stylesheets and third party scripts, etc. This is commonly excused as "no big deal", but it does compound rather quickly.
 
 #### React SSR bundles are less data-efficient
 
